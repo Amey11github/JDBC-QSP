@@ -12,7 +12,7 @@ public class BatchExecutionEx {
     	 String user="postgres";
     	 String pwd="root";
     	 
-    	 try(Connection con=DriverManager.getConnection(url, user, pwd);)
+    	 try(Connection con=DriverManager.getConnection(url, user, pwd))
     	 {
     		 Statement st=con.createStatement();
     		 
@@ -20,10 +20,10 @@ public class BatchExecutionEx {
     		 st.addBatch(sqlInsert1);
     		 
     		 String sqlInsert2="Insert into person values(908,'vijay',25)";
-    		 st.addBatch(sqlInsert1);
+    		 st.addBatch(sqlInsert2);
     		 
     		 String sqlInsert3="Insert into person values(909,'sujay',25)";
-    		 st.addBatch(sqlInsert1);
+    		 st.addBatch(sqlInsert3);
     		 
     		 st.executeBatch();
     		 
